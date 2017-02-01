@@ -8,6 +8,7 @@ pipeline:
         privileged: true
         commands:
             - docker build -t pingu/orangeteamspeak:latest .
+            - echo ${DOCKER_AUTH}
     
 
     docker:
@@ -20,5 +21,5 @@ pipeline:
         auth: ${DOCKER_AUTH}
         tags:
             - latest
-
+        
             

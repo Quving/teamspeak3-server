@@ -12,6 +12,7 @@ pipeline:
 
     docker:
         image: plugins/docker
+        privileged: true        
         repo: pingu/orangeteamspeak
         auth: ${DOCKER_AUTH}
         tags:

@@ -8,4 +8,5 @@ pipeline:
         privileged: true
         commands:
             - docker build -t pingu/orangeteamspeak:latest .
+            - docker login --username ${DOCKER_LOGIN} --password ${DOCKER_PW}
             - docker push pingu/orangeteamspeak:latest

@@ -9,7 +9,7 @@ pipeline:
         privileged: true
         commands:
             - docker build -t pingu/orangeteamspeak:latest .
-            - echo ${DOCKER_AUTH}
+            - env
     
     docker:
         image: plugins/docker

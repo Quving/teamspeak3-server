@@ -1,7 +1,10 @@
+# Build
 build:	
 	docker build -t ts3:orange . 
 	docker tag ts3:orange pingu/ts3:latest
 	docker push pingu/ts3:latest
+
+# Start
 run:
 	docker run \
 	-it \

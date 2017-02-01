@@ -1,6 +1,7 @@
 pipeline:
     build:
         image: docker:latest
+        privileged: true
         commands:
             - docker build -t pingu/orangeteamspeak:latest .
             - docker push pingu/orangeteamspeak:latest

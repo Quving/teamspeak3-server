@@ -11,6 +11,7 @@ pipeline:
             - docker build -t pingu/orangeteamspeak:latest .
             - env
     
+    
 
     docker:
         image: plugins/docker

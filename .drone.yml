@@ -1,6 +1,6 @@
 pipeline:
     build:
         image: docker:latest
-    commands:
-        - docker build -t pingu/orangeteamspeak:latest
-        - docker push pingu/orangeteamspeak:latest
+        commands:
+            - docker build -t pingu/orangeteamspeak:latest
+            - docker push pingu/orangeteamspeak:latest

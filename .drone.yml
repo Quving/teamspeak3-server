@@ -3,13 +3,13 @@ pipeline:
         image: docker:latest
         environment:
             - DOCKER_HOST=unix:///tmp/host.sock
-            - DOCKER_AUTH=${DOCKER_AUTH}
+            #- DOCKER_AUTH=${DOCKER_AUTH}
         volumes:
             - /var/run/docker.sock:/tmp/host.sock:rw
         privileged: true
         commands:
             - docker build -t pingu/orangeteamspeak:latest .
-            - env
+            - echo $$DOCKER_AUTH
     
 
     docker:

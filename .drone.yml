@@ -12,7 +12,10 @@ pipeline:
 
     docker:
         image: plugins/docker
-        privileged: true        
+        environment:
+            - DOCKER_HOST=unix:///tmp/host.sock
+        volumes:
+            - /var/run/docker.sock:/tmp/host.sock:rw       
         repo: pingu/orangeteamspeak
         auth: ${DOCKER_AUTH}
         tags:

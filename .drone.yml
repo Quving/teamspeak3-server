@@ -15,13 +15,13 @@ pipeline:
           branch: [ master ]
 
     docker:
-      image: plugins/docker
+      image: plugins/drone-docker
       username: ${DHUB_LOGIN}
       password: ${DHUB_PW}
-      repo: pingu/orangeteamspeak
+      repo: pingu/Orangeteamspeak
       tags: latest
                 
-                
+
     notify:
       image: plugins/slack
       webhook: ${SLACK_WEBHOOK}    

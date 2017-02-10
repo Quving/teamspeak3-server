@@ -24,3 +24,16 @@ pipeline:
             - latest
         
             
+  notify:
+    image: plugins/slack
+    webhook: ${SLACK_WEBHOOK}    
+    channel: drone
+    username: drone-ci
+    template: |
+      *{{ build.ref }}* #{{ build.number }} by *{{ build.author }}* finished with a *{{ uppercase build.status }}* in {{ since build.created }}
+      *Commit*: _{{ build.commit }}_
+      *Branch*:  _{{ build.branch }}_
+      {{ build.link }} 
+    when:
+      event: [ push, tag, deployment, pull_request ]
+      status: [ success, failure ]

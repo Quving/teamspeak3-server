@@ -9,20 +9,11 @@ pipeline:
         privileged: true
         commands:
             - docker build -t pingu/orangeteamspeak:latest .
-            - echo $$DOCKER_AUTH
+            - docker login --username $DHUB_LOGIN --password $DHUB_PASSWORD
+            - docker push pingu/orangeteamspeak:latest
         when:
             branch: [ master ]
-    
-    docker:
-        image: plugins/docker
-        environment:
-            - DOCKER_HOST=unix:///tmp/host.sock
-        volumes:
-            - /var/run/docker.sock:/tmp/host.sock:rw       
-        repo: pingu/orangeteamspeak
-        auth: ${DOCKER_AUTH}
-        tags:
-            - latest
+
                 
     notify:
       image: plugins/slack

@@ -15,11 +15,13 @@ pipeline:
           branch: [ master ]
 
     docker:
-      image: plugins/drone-docker
+      image: plugins/docker
       username: ${DHUB_LOGIN}
       password: ${DHUB_PW}
       repo: pingu/Orangeteamspeak
       tags: latest
+      when:
+        status: [ success ]
                 
 
     notify:

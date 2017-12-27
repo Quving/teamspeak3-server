@@ -3,7 +3,7 @@ pipeline:
     image: plugins/docker
     privileged: true
     repo: pingu/ots3
-    tags: latest
+    tags: 3.0.12.4
     secrets: [ docker_username, docker_password ]
     when:
       status: [ success ]

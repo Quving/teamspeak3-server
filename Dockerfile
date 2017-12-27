@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 
 ENV TS3_UID 1000
-ENV VERSION 3.0.12.4
+ENV VERSION 3.0.13.8
 ENV TS3_DL http://dl.4players.de/ts/releases/${VERSION}/teamspeak3-server_linux_amd64-${VERSION}.tar.bz2
 
 RUN apt update && \

@@ -1,3 +1,5 @@
+[![Build Status](http://drone.quving.com/api/badges/Quving/vingupad/status.svg)](http://drone.quving.com/Quving/vingupad)
+
 # teamspeak3-server
 This repository provides scripts to host your own [teamspeak3 server](http://www.teamspeak.com/en/) using [docker](https://www.docker.com/what-docker).
 

@@ -9,10 +9,10 @@ The teamspeak3-server's default ports are:
 - 30033
 - 10011
 
-**Build the docker image**
+#### Build the docker image
 ``` $ docker build -t teamspeak3-server:latest . ```
 
-**Run the container**
+#### Run the container
 ``` 
 $ docker run -d -v /path/to/ts3-files:/ts3/teamspeak3-server_linux_amd64/files  \
     -v /path/to/ts3-logs:/ts3/teamspeak3-server_linux_amd64/logs \

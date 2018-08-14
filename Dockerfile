@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-ENV TS3_VERSION 3.0.13.8
+ENV TS3_VERSION 3.3.0
 ENV TS3_DL http://ftp.4players.de/pub/hosted/ts3/releases/${TS3_VERSION}/teamspeak3-server_linux_amd64-${TS3_VERSION}.tar.bz2
 ENV TS3_FILE ts3-server
 

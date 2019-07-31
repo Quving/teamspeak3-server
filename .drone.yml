@@ -1,10 +1,15 @@
-pipeline:
-  publish:
-    image: plugins/docker
-    privileged: true
+kind: pipeline
+name: pipeline
+steps:
+- name: publish
+  image: plugins/docker
+  settings:
     repo: pingu/ots3
-    tags: 3.9.1, latest
-    secrets: [ docker_username, docker_password ]
-    when:
-      status: [ success ]
-      branch: [ master ]
+    tags: latest, 3.9.1
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+  when:
+    status: [ success ]
+    branch: [ master ]

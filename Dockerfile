@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-ENV TS3_VERSION 3.9.1
+ENV TS3_VERSION 3.11.0
 ENV TS3_DL https://files.teamspeak-services.com/releases/server/${TS3_VERSION}/teamspeak3-server_linux_amd64-${TS3_VERSION}.tar.bz2
 ENV TS3_FILE ts3-server
 
@@ -19,5 +19,5 @@ RUN wget -O ${TS3_FILE}.tar.bz2 ${TS3_DL}; ls && \
 #Expose the Standard TS3 port, for files, for serverquery
 EXPOSE 9987/udp 30033 10011
 
-CMD ["/ts3/teamspeak3-server_linux_amd64/ts3server_minimal_runscript.sh"]
+CMD ["/ts3/teamspeak3-server_linux_amd64/ts3server_minimal_runscript.sh", "license_accepted=1"]
 

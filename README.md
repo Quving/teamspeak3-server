@@ -13,12 +13,14 @@ The teamspeak3-server's default ports are:
 ``` $ docker build -t teamspeak3-server:latest . ```
 
 #### Run the container
-```
-$ docker run -d -v /path/to/ts3-files:/ts3/teamspeak3-server_linux_amd64/files  \
+```bash
+$ docker run -d \
+    -v /path/to/ts3-files:/ts3/teamspeak3-server_linux_amd64/files  \
     -v /path/to/ts3-logs:/ts3/teamspeak3-server_linux_amd64/logs \
     -v /path/to/ts3-ts3server.sqlitedb:/ts3/teamspeak3-server_linux_amd64/ts3server.sqlitedb \
     -p 9987:9987/udp -p 30033:30033 -p 10011:10011 \
-    --name teamspeak3-server teamspeak3-server:latest
+    --name teamspeak3-server \
+    teamspeak3-server:latest
 ```
 
 **Check if your teamspeak client can connect to your server**
